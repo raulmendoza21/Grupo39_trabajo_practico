@@ -23,7 +23,7 @@ public class PaddleManager {
 
     public Customer getCustomer(NIF nif) {
         for (Customer customer : customers) {
-            if (customer.nif == nif) return customer;
+            if (customer.getNif() == nif) return customer;
         }
         return null;
     }

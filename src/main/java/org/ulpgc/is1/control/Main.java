@@ -32,7 +32,7 @@ public class Main {
                 ", NIF: " + customers.get(1).getNif());
     }
     public static void main(String[] args) {
-        System.out.println("QUE DISE MI COLEGA");
+        init();
     }
 
 
