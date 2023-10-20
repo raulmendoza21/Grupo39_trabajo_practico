@@ -7,9 +7,9 @@ public class PaddleManager {
     private ArrayList<Customer> customers;
     private ArrayList<Court> courts;
 
-    public PaddleManager(ArrayList<Customer> customers, ArrayList<Court> courts) {
-        this.customers = customers;
-        this.courts = courts;
+    public PaddleManager() {
+        this.customers = new ArrayList<>();
+        this.courts = new ArrayList<>();
     }
 
     public void addCustomer(String name, String surname, NIF nif) {
