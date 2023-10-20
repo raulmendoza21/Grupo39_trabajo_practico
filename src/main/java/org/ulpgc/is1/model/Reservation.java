@@ -3,7 +3,7 @@ package org.ulpgc.is1.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Reservation {
+public abstract class Reservation {
 
 	private Court court;
 	private Customer customer;
@@ -19,5 +19,10 @@ public class Reservation {
 		this.date = date;
 		Id = id;
 	}
-	//public int price();/ arreglar esto
+
+	public int price() {
+		int extrasTotal = 0;
+		for (Extra extraPrice : extras) extrasTotal += extraPrice.getPrice();
+		return court.price + extrasTotal;
+	}
 }
