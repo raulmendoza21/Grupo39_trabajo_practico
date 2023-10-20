@@ -1,9 +1,9 @@
 package org.ulpgc.is1.model;
 
 public class NIF {
-    public int number;
+    public String number;
 
-    public NIF(int number){
+    public NIF(String number) {
         this.number = number;
     }
 
@@ -13,12 +13,10 @@ public class NIF {
         if (nifString.length() != 9) {
             return false;
         }
-        char controlCode = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(number % 23);
+        // Asegúrate de que el número sea un valor numérico antes de aplicar el operador %.
+        int numericValue = Integer.parseInt(nifString.substring(0, 8));
+        char controlCode = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(numericValue % 23);
         return nifString.charAt(8) == controlCode;
-    }
 
-    public static void main(String[] args) {
-        NIF nif = new NIF(12345678); // Reemplaza 12345678 con tu número de ejemplo
-        System.out.println(nif.isValid()); // Devuelve true si el NIF es válido, de lo contrario devuelve false
     }
 }
