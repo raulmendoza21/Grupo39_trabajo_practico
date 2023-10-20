@@ -1,15 +1,23 @@
 package org.ulpgc.is1.model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Reservation {
 
 	private Court court;
-	private Date Date;
+	private Customer customer;
 	private static int Next_ID = 0;
-	final int Id;
+	public final int Id;
+	public Date date;
+	private ArrayList<Extra> extras;
 
-	public Reservation(Court court, Date date, int id) {
+	public Reservation(Court court, Customer customer, Date date, int id, ArrayList<Extra> extras) {
 		this.court = court;
-		Date = date;
+		this.customer = customer;
+		this.extras = new ArrayList<Extra>();
+		this.date = date;
 		Id = id;
 	}
+	//public int price();/ arreglar esto
 }
