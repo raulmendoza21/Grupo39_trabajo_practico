@@ -1,5 +1,5 @@
 package org.ulpgc.is1.model;
 
- enum CourtType {
+ public enum CourtType {
     Slow_court, Fast_court
 }

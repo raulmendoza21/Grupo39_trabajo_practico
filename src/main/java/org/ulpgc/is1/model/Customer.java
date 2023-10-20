@@ -3,15 +3,31 @@ package org.ulpgc.is1.model;
 import java.util.ArrayList;
 
 public class Customer {
-    public String name;
-    public String surname;
-    public NIF nif;
+    private String name;
+    private String surname;
+    private NIF nif;
     public ArrayList<Reservation> reservations;
 
-    public Customer(String name, String surname, NIF nif) {
+    public Customer(String name, String surname, String nif) {
         this.name = name;
         this.surname = surname;
-        this.nif = nif;
+        this.nif = new NIF(nif);
         this.reservations = new ArrayList<>();
+    }
+
+    public NIF getNif() {
+        return nif;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public ArrayList<Reservation> getReservations() {
+        return reservations;
     }
 }

@@ -3,7 +3,7 @@ package org.ulpgc.is1.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public abstract class Reservation {
+public class Reservation {
 
 	private Court court;
 	private Customer customer;

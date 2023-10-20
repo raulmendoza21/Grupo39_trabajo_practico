@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class PaddleManager {
+
     private ArrayList<Customer> customers;
     private ArrayList<Court> courts;
 
@@ -12,7 +13,7 @@ public class PaddleManager {
         this.courts = new ArrayList<>();
     }
 
-    public void addCustomer(String name, String surname, NIF nif) {
+    public void addCustomer(String name, String surname, String nif) {
         customers.add(new Customer(name, surname, nif));
     }
 
@@ -29,7 +30,7 @@ public class PaddleManager {
 
     public Court getCourt(String name) {
         for (Court court : courts) {
-            if (court.name.equals(name)) {
+            if (court.getName().equals(name)) {
                 return court;
             }
         }
@@ -39,5 +40,12 @@ public class PaddleManager {
     public void reserve(NIF nif, Date date, Court court, ArrayList<Extra> extras) {
         Customer customer = getCustomer(nif);
         customer.reservations.add(new Reservation(court, customer, date, extras));
+    }
+    public ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+
+    public ArrayList<Court> getCourts() {
+        return courts;
     }
 }
