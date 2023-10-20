@@ -11,12 +11,17 @@ public class NIF {
     public boolean isValid() {
         String nifString = String.valueOf(number);
         if (nifString.length() != 9) {
+            System.out.println("Numero de NIF erroneo");
             return false;
         }
         // Asegúrate de que el número sea un valor numérico antes de aplicar el operador %.
-        int numericValue = Integer.parseInt(nifString.substring(0, 8));
-        char controlCode = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(numericValue % 23);
-        return nifString.charAt(8) == controlCode;
-
+        try {
+            int numericValue = Integer.parseInt(nifString.substring(0, 8));
+            char controlCode = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(numericValue % 23);
+            return nifString.charAt(8) == controlCode;
+        } catch (NumberFormatException e) {
+            System.out.println("Numero de NIF erroneo");
+            return false;
+        }
     }
 }
