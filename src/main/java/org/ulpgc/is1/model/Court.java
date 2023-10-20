@@ -9,10 +9,10 @@ public class Court {
 	private ArrayList<Reservation> reservations;
 	private CourtType courtType;
 
-	public Court(String name, int price, ArrayList<Reservation> reservations, CourtType courtType){
+	public Court(String name, int price, CourtType courtType){
 		this.name = name;
 		this.price = price;
-		this.reservations = new ArrayList<Reservation>();
+		this.reservations = new ArrayList<>();
 		this.courtType = courtType;
 	}
 	public int getPrice() {

@@ -12,12 +12,13 @@ public class Reservation {
 	public Date date;
 	private ArrayList<Extra> extras;
 
-	public Reservation(Court court, Customer customer, Date date, int id, ArrayList<Extra> extras) {
+	public Reservation(Court court, Customer customer, Date date, ArrayList<Extra> extras) {
 		this.court = court;
 		this.customer = customer;
 		this.extras = new ArrayList<Extra>();
 		this.date = date;
-		Id = id;
+		Id = Next_ID;
+		Next_ID += 1;
 	}
 	//public int price();/ arreglar esto
 }
