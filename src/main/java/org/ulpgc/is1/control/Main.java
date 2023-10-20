@@ -19,9 +19,8 @@ public class Main {
 
         for (Customer customer : customers) {
             if (customer.getNif().isValid()) {
-                System.out.println(customer.getNif());;
-            }
-            else {
+                System.out.println(customer.getNif());
+            } else {
                 System.out.println("NIF no válido");
             }
         }
@@ -31,27 +30,8 @@ public class Main {
         System.out.println("Nombre: " + customers.get(1).getName() + ", " + customers.get(1).getSurname() +
                 ", NIF: " + customers.get(1).getNif());
     }
+
     public static void main(String[] args) {
         init();
     }
-
-
-    /*  i. Init. Crear dos clientes. El primer cliente será miembro del club de paddle.
-            El segundo cliente tendrá el NIF: “12SD34TT4”.
-        ii. Init. Crear dos pistas de paddle, una será de tipo rápido y otra de tipo lento.
-        iii. Imprimir por pantalla los NIF’s válidos de los clientes del club. (*) En el caso que
-            el cliente tenga un NIF no válido se almacenará el valor: “XXXX”.
-        iv. Imprimir por pantalla los datos del primer cliente.
-        v. Imprimir por pantalla los datos del segundo cliente.
-        vi. Imprimir por pantalla los datos de la segunda pista.
-        vii. Crear una reserva por parte del primer cliente en la segunda pista.
-        viii. Borrar el segundo cliente.
-        ix. Imprimir por pantalla el número de clientes del club.
-        x. Imprimir por pantalla de todas las reservas realizadas: el nombre del cliente
-            que ha hecho la reserva, el nombre de la pista, el día y el coste de dicha
-            reserva.
-    */
-
-
-
 }
