@@ -15,7 +15,4 @@ public class Court {
 		this.reservations = new ArrayList<Reservation>();
 		this.courtType = courtType;
 	}
-	public int getPrice() {
-		return price;
-	}
 }
