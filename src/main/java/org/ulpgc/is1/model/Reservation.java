@@ -9,7 +9,7 @@ public abstract class Reservation {
 	private Customer customer;
 	private static int Next_ID = 0;
 	public final int Id;
-	public Date date;
+	private Date date;
 	private ArrayList<Extra> extras;
 
 	public Reservation(Court court, Customer customer, Date date, int id, ArrayList<Extra> extras) {
@@ -23,6 +23,13 @@ public abstract class Reservation {
 	public int price() {
 		int extrasTotal = 0;
 		for (Extra extraPrice : extras) extrasTotal += extraPrice.getPrice();
-		return court.price + extrasTotal;
+		return court.getPrice() + extrasTotal;
+	}
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }
