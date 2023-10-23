@@ -38,4 +38,8 @@ public class Reservation {
 	public void addExtra(Extra extra) {
 		this.extras.add(extra);
 	}
+
+	public Court getCourt() {
+		return court;
+	}
 }

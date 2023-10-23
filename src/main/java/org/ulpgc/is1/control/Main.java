@@ -23,11 +23,7 @@ public class Main {
         ArrayList<Court> courts = manager.getCourts();
 
         for (Customer customer : customers) {
-            if (customer.getNif().isValid()) {
-                System.out.println(customer.getNif());
-            } else {
-                System.out.println("NIF no válido");
-            }
+            customer.getNif().isValid();
         }
 
         System.out.println("Nombre: " + customers.get(0).getName() + ", " + customers.get(0).getSurname() +
@@ -40,14 +36,13 @@ public class Main {
                 ", Tipo: " + courts.get(1).getCourtType());
 
         manager.reserve(customers.get(0).getNif(), LocalDate.of(2023, 12, 30), courts.get(1));
+        manager.reserve(customers.get(0).getNif(), LocalDate.of(2023, 12, 30), courts.get(1));
 
         customers.remove(1);
 
-        int count = 0;
-        for (Customer customer : customers) count += 1;
-        System.out.println("Número de clientes: " + count);
+        System.out.println(manager.countCustomers());
 
-		// TODO punto 10 init
+		manager.showReservations();
     }
 
     public static void main(String[] args) {

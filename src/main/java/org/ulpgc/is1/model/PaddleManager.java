@@ -49,4 +49,23 @@ public class PaddleManager {
     public ArrayList<Court> getCourts() {
         return courts;
     }
+
+    public int countCustomers() {
+        int count = 0;
+        for (Customer customer : customers) count++;
+        return count;
+    }
+    public void showReservations() {
+        for (Customer customer : customers) {
+            int count = 1;
+            for (Reservation reservation : customer.reservations) {
+                System.out.println("Reserva " + count);
+                System.out.println("Nombre: "+ customer.getName() + " " + customer.getSurname());
+                System.out.println("Pista: " + reservation.getCourt().getName());
+                System.out.println("Fecha: " + reservation.getDate());
+                System.out.println("Coste: " + reservation.price());
+                count++;
+            }
+        }
+    }
 }
