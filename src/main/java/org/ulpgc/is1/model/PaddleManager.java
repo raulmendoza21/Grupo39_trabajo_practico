@@ -37,9 +37,9 @@ public class PaddleManager {
         return null;
     }
 
-    public void reserve(NIF nif, Date date, Court court, ArrayList<Extra> extras) {
+    public void reserve(NIF nif, Date date, Court court) {
         Customer customer = getCustomer(nif);
-        customer.reservations.add(new Reservation(court, customer, date, extras));
+        customer.reservations.add(new Reservation(court, customer, date));
     }
     public ArrayList<Customer> getCustomers() {
         return customers;

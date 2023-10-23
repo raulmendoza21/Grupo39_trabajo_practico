@@ -12,7 +12,7 @@ public class Reservation {
 	private Date date;
 	private ArrayList<Extra> extras;
 
-	public Reservation(Court court, Customer customer, Date date, ArrayList<Extra> extras) {
+	public Reservation(Court court, Customer customer, Date date) {
 		this.court = court;
 		this.customer = customer;
 		this.extras = new ArrayList<Extra>();
@@ -32,5 +32,9 @@ public class Reservation {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public void addExtra(Extra extra) {
+		this.extras.add(extra);
 	}
 }

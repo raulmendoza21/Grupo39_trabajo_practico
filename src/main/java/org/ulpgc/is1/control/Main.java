@@ -39,8 +39,7 @@ public class Main {
                 ", Tipo: " + courts.get(1).getCourtType());
 
         Date date = new Date();
-        ArrayList<Extra> extras1 = new ArrayList<>();
-        manager.reserve(customers.get(0).getNif(), date, courts.get(1), extras1);
+        manager.reserve(customers.get(0).getNif(), date, courts.get(1));
 
         customers.remove(1);
 
