@@ -1,5 +1,6 @@
 package org.ulpgc.is1.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -9,10 +10,10 @@ public class Reservation {
 	private Customer customer;
 	private static int Next_ID = 0;
 	public final int Id;
-	private Date date;
+	private LocalDate date;
 	private ArrayList<Extra> extras;
 
-	public Reservation(Court court, Customer customer, Date date) {
+	public Reservation(Court court, Customer customer, LocalDate date) {
 		this.court = court;
 		this.customer = customer;
 		this.extras = new ArrayList<Extra>();
@@ -26,11 +27,11 @@ public class Reservation {
 		for (Extra extraPrice : extras) extrasTotal += extraPrice.getPrice();
 		return court.getPrice() + extrasTotal;
 	}
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 

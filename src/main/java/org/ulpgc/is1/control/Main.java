@@ -3,6 +3,7 @@ package org.ulpgc.is1.control;
 import org.ulpgc.is1.model.*;
 
 import javax.sound.midi.SysexMessage;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -38,8 +39,7 @@ public class Main {
         System.out.println("Pista: " + courts.get(1).getName() + ", Precio: " + courts.get(1).getPrice() +
                 ", Tipo: " + courts.get(1).getCourtType());
 
-        Date date = new Date();
-        manager.reserve(customers.get(0).getNif(), date, courts.get(1));
+        manager.reserve(customers.get(0).getNif(), LocalDate.of(2023, 12, 30), courts.get(1));
 
         customers.remove(1);
 

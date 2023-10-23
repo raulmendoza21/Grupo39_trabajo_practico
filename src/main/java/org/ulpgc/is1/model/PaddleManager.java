@@ -1,5 +1,6 @@
 package org.ulpgc.is1.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -37,7 +38,7 @@ public class PaddleManager {
         return null;
     }
 
-    public void reserve(NIF nif, Date date, Court court) {
+    public void reserve(NIF nif, LocalDate date, Court court) {
         Customer customer = getCustomer(nif);
         customer.reservations.add(new Reservation(court, customer, date));
     }
