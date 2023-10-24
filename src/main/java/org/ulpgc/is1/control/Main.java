@@ -13,7 +13,7 @@ public class Main {
 
     public static void init() {
         PaddleManager manager = new PaddleManager();
-        manager.addCustomer("Pepe", "Chola", "12345678A");
+        manager.addCustomer("Pepe", "Chola", "12345678Z");
         manager.addCustomer("Raúl", "MEndozs", "12SD34TT4");
 
         manager.addCourt("Pista1", 10, CourtType.Fast_court);
@@ -21,13 +21,6 @@ public class Main {
 
         ArrayList<Customer> customers = manager.getCustomers();
         ArrayList<Court> courts = manager.getCourts();
-
-        //verificacion si nif es valido, en caso de que no nif = XXXX
-        for (Customer customer : customers) {
-            if (!customer.getNif().isValid()) {
-                customer.setNif(new NIF("XXXX"));
-            }
-        }
 
         System.out.println("Nombre: " + customers.get(0).getName() + ", " + customers.get(0).getSurname() +
                 ", NIF: " + customers.get(0).getNif());
