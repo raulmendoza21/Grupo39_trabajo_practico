@@ -14,7 +14,7 @@ public class Main {
     public static void init() {
         PaddleManager manager = new PaddleManager();
         manager.addCustomer("Pepe", "Chola", "12345678A");
-        manager.addCustomer("Raúl", "MEndozs", "4554555A");
+        manager.addCustomer("Raúl", "MEndozs", "12SD34TT4");
 
         manager.addCourt("Pista1", 10, CourtType.Fast_court);
         manager.addCourt("Pista2", 10, CourtType.Slow_court);
@@ -22,8 +22,11 @@ public class Main {
         ArrayList<Customer> customers = manager.getCustomers();
         ArrayList<Court> courts = manager.getCourts();
 
+        //verificacion si nif es valido, en caso de que no nif = XXXX
         for (Customer customer : customers) {
-            customer.getNif().isValid();
+            if (!customer.getNif().isValid()) {
+                customer.setNif(new NIF("XXXX"));
+            }
         }
 
         System.out.println("Nombre: " + customers.get(0).getName() + ", " + customers.get(0).getSurname() +
@@ -33,14 +36,12 @@ public class Main {
 
 
         System.out.println("Pista: " + courts.get(1).getName() + ", Precio: " + courts.get(1).getPrice() +
-                ", Tipo: " + courts.get(1).getCourtType());
+                ", Tipo: " + courts.get(1).getCourtType() + "\n");
 
         manager.reserve(customers.get(0).getNif(), LocalDate.of(2023, 12, 30), courts.get(1));
-        manager.reserve(customers.get(0).getNif(), LocalDate.of(2023, 12, 30), courts.get(1));
+        manager.reserve(customers.get(1).getNif(), LocalDate.of(2023, 12, 30), courts.get(1));
 
-        customers.remove(1);
-
-        System.out.println(manager.countCustomers());
+        System.out.println("Hay un total de: " + manager.countCustomers() + " reservas.\n");
 
 		manager.showReservations();
     }

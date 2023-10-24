@@ -56,14 +56,15 @@ public class PaddleManager {
         return count;
     }
     public void showReservations() {
+        int count = 1;
         for (Customer customer : customers) {
-            int count = 1;
             for (Reservation reservation : customer.reservations) {
                 System.out.println("Reserva " + count);
                 System.out.println("Nombre: "+ customer.getName() + " " + customer.getSurname());
+                System.out.println("NIF: " + customer.getNif().toString());
                 System.out.println("Pista: " + reservation.getCourt().getName());
                 System.out.println("Fecha: " + reservation.getDate());
-                System.out.println("Coste: " + reservation.price());
+                System.out.println("Coste: " + reservation.price() + "\n");
                 count++;
             }
         }

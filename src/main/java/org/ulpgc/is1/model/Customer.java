@@ -8,6 +8,18 @@ public class Customer {
     private NIF nif;
     public ArrayList<Reservation> reservations;
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setNif(NIF nif) {
+        this.nif = nif;
+    }
+
     public Customer(String name, String surname, String nif) {
         this.name = name;
         this.surname = surname;

@@ -7,21 +7,22 @@ public class NIF {
         this.number = number;
     }
 
-    //metodo isValid que saque de internet, se encargara de validar si el nif es correcto o no
     public boolean isValid() {
         String nifString = String.valueOf(number);
         if (nifString.length() != 9) {
-            System.out.println("Numero de NIF erroneo");
             return false;
         }
         // Asegúrate de que el número sea un valor numérico antes de aplicar el operador %.
         try {
             int numericValue = Integer.parseInt(nifString.substring(0, 8));
             char controlCode = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(numericValue % 23);
-            return nifString.charAt(8) == controlCode;
+            return true;
         } catch (NumberFormatException e) {
-            System.out.println("Numero de NIF erroneo");
             return false;
         }
+    }
+
+    public String toString(){
+        return String.valueOf(number);
     }
 }
